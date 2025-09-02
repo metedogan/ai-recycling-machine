@@ -80,7 +80,7 @@ trashnet/
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone github.com/metedogan/ai-recycling-machine
 cd trashnet
 
 # Install dependencies
@@ -432,7 +432,3 @@ For issues and questions:
 2. Review the configuration in `src/config/settings.py`
 3. Check logs in the `logs/` directory
 4. Open an issue on the repository
-
----
-
-**Note**: This is a refactored version of the original TrashNet project with improved modularity, maintainability, and extensibility.
