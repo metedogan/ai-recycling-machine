@@ -81,7 +81,7 @@ trashnet/
 ```bash
 # Clone the repository
 git clone github.com/metedogan/ai-recycling-machine
-cd trashnet
+cd ai-recycling-machine
 
 # Install dependencies
 pip install -r requirements.txt
