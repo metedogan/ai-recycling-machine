@@ -325,13 +325,13 @@ The system includes comprehensive visualization tools:
 
 ### MobileNetV2 (Transfer Learning)
 
-- **Accuracy**: ~75% (with proper training)
+- **Accuracy**: ~86% (with proper training)
 - **Speed**: Fast inference
 - **Size**: Compact model
 
 ### Custom CNN
 
-- **Accuracy**: ~70% (baseline)
+- **Accuracy**: ~75% (baseline)
 - **Speed**: Very fast inference
 - **Size**: Lightweight
 
