@@ -1,0 +1,1 @@
+# TrashNet Classification Package
