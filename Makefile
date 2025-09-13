@@ -7,17 +7,18 @@ help:
 	@echo "TrashNet Classification - Available Commands:"
 	@echo ""
 	@echo "Setup:"
-	@echo "  install     - Full environment setup (recommended)"
-	@echo "  install-deps - Install dependencies only"
+	@echo "  install     - User setup (inference only)"
+	@echo "  install-dev - Developer setup (full features)"
+	@echo "  install-deps - Install user dependencies only"
 	@echo "  fix-opencv  - Fix OpenCV installation issues"
 	@echo "  clean       - Clean generated files and directories"
 	@echo ""
 	@echo "Data:"
 	@echo "  preprocess  - Preprocess dataset (resize images)"
 	@echo ""
-	@echo "Training:"
-	@echo "  train       - Train MobileNet model"
-	@echo "  train-custom - Train custom CNN model"
+	@echo "Usage:"
+	@echo "  quickstart  - Complete setup and launch app"
+	@echo "  verify      - Check model and dependencies"
 	@echo ""
 	@echo "Inference:"
 	@echo "  predict     - Run prediction on sample image"
@@ -35,13 +36,16 @@ help:
 
 # Installation
 install:
+	python setup_user.py
+	@echo "User setup completed!"
+
+install-dev:
 	python setup_environment.py
-	@echo "Installation completed!"
+	@echo "Developer setup completed!"
 
 install-deps:
-	pip install -r requirements.txt
-	pip install -e .
-	@echo "Dependencies installed!"
+	pip install -r requirements_user.txt
+	@echo "User dependencies installed!"
 
 fix-opencv:
 	pip install opencv-python
@@ -131,11 +135,17 @@ full-pipeline: clean preprocess train predict
 
 # Quick start for new users
 quickstart:
-	@echo "TrashNet Quick Start:"
-	@echo "1. Installing dependencies..."
+	@echo "🚀 TrashNet Quick Start:"
+	@echo "1. Setting up environment..."
 	make install
-	@echo "2. Preprocessing data (if dataset exists)..."
-	-make preprocess
-	@echo "3. Running examples..."
-	make examples
-	@echo "Quick start completed! Run 'make train' to train a model."
+	@echo "2. Verifying model..."
+	make verify
+	@echo "3. Launching app..."
+	make app
+	@echo "✅ Quick start completed! Check your browser at http://localhost:8501"
+
+verify:
+	@echo "🔍 Verifying TrashNet setup..."
+	@python -c "import cv2, tensorflow, streamlit; print('✅ All dependencies OK')"
+	@python -c "from pathlib import Path; print('✅ Model found' if Path('model.keras').exists() else '❌ Model missing')"
+	@echo "Verification completed!"

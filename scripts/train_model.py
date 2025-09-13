@@ -94,7 +94,7 @@ def main():
         # Train model
         logger.info("Starting model training...")
         
-        model_save_path = Path(args.output_dir) / f"trashnet_{args.model_type}_best.keras"
+        model_save_path = Path(args.output_dir) / f"model.keras"
         
         results = trainer.train_model(
             X_train, y_train, X_val, y_val,
