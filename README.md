@@ -8,7 +8,15 @@ Upload a photo → Get instant classification → Improve recycling! 🌱
 
 ### 1. Install & Run
 ```bash
-python setup.py
+# Clone the repository
+git clone github.com/metedogan/ai-recycling-machine
+cd ai-recycling-machine
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install as package (optional)
+pip install -e .
 ```
 That's it! The app will open in your browser automatically.
 
